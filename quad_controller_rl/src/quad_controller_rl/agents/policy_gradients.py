@@ -94,7 +94,7 @@ class Actor:
     def build_model(self):
         """Build an actor (policy) network that maps states -> actions."""
         
-		# Define input layer (states)
+	# Define input layer (states)
         states = layers.Input(shape=(self.state_size,), name='states')
         
         # Add hidden layers
@@ -142,7 +142,7 @@ class Critic:
     def build_model(self):
         """Build a critic (value) network that maps (state, action) pairs -> Q-values."""
         
-		# Define input layers
+	# Define input layers
         states = layers.Input(shape=(self.state_size,), name='states')
         actions = layers.Input(shape=(self.action_size,), name='actions')
             
@@ -209,7 +209,7 @@ class DDPG(BaseAgent):
         self.memory = ReplayBuffer(self.buffer_size)
 
         # Algorithm parameters
-        self.gamma = 0.0  # Discount factor
+        self.gamma = 0.5  # Discount factor
         self.tau = 0.001  # for soft update of target parameters
 
         self.reset_episode_vars()
