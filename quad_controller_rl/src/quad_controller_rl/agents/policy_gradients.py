@@ -94,7 +94,7 @@ class Actor:
     def build_model(self):
         """Build an actor (policy) network that maps states -> actions."""
         
-	# Define input layer (states)
+		# Define input layer (states)
         states = layers.Input(shape=(self.state_size,), name='states')
         
         # Add hidden layers
@@ -142,7 +142,7 @@ class Critic:
     def build_model(self):
         """Build a critic (value) network that maps (state, action) pairs -> Q-values."""
         
-	# Define input layers
+		# Define input layers
         states = layers.Input(shape=(self.state_size,), name='states')
         actions = layers.Input(shape=(self.action_size,), name='actions')
             
